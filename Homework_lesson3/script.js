@@ -9,12 +9,10 @@ let servicePrice1 = +prompt("Сколько это будет стоить?");
 let service2 = prompt("Какой дополнительный тип услуги нужен?");
 let servicePrice2 = +prompt("Сколько это будет стоить?");
 let rollback = 25;
-fullPrice = screenPrice + servicePrice1 + servicePrice2;
+let fullPrice = screenPrice + servicePrice1 + servicePrice2;
 
 let percentPrice = Math.ceil(fullPrice * (rollback / 100));
 let servicePercentPrice = fullPrice - percentPrice;
-console.log(`Стоимость за вычетом отката посреднику: ${servicePercentPrice}`);
-console.log('*******');
 
 switch (true) {
     case fullPrice > 30000:
@@ -39,3 +37,4 @@ console.log('Будет стоить:', servicePrice1, 'рублей');
 console.log('Нужен тип услуги:', service2);
 console.log('Будет стоить:', servicePrice2, 'рублей');
 console.log(`Итоговая стоимость работы: ${fullPrice}`);
+console.log(`Стоимость за вычетом отката посреднику: ${servicePercentPrice}`);
